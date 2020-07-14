@@ -1,0 +1,7 @@
+<div><input [(ngModel)]="post.id" #id="ngModel" required></div>
+<div *ngIf="!id.touched">fill id</div>
+<div><input [(ngModel)]="post.body" #body="ngModel" required></div>
+<div *ngIf="!body.touched">fill body</div>
+<button (click)="search()" [disabled]="!body.valid && !id.valid">search</button>
+<div *ngIf="!body.valid && !id.valid">fill form</div>
+
